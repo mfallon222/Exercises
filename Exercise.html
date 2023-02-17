@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">   
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="SVG exercise">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Example: Animating SVG Images with CSS and JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link href="/css/style.css" rel="stylesheet" >
+    <style>
+        #shape {
+        /* student: you might have to change this width value */
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            border: 1px solid #006837;
+            border-radius: 5px;
+            background: cornsilk;
+            transition: .5s ease-in-out;
+        }
+
+        hr {
+            border-top: 2px dashed #444;
+        }
+
+        .animate {
+        /* student: this transform flips the image */
+            transform-style: preserve-3d;
+            transform: rotateY(180deg);
+            
+      /* student: see some other ideas below */
+      
+       	/* rotate over */
+           /* transform: rotate(180deg);*/
+
+        /*get small*/
+           /*  transform: scale(.5);*/
+			
+        /*scoot away*/
+           /* transform: translate(800px,30px);*/
+           
+        /*COMBINING example, scoot away and get small */
+        	/* transform: translate(800px,30px) scale(0);*/   
+           
+        }
+
+        #message {
+            display: none;
+        }
+
+    </style>
+<link href="/css/style.css">	
+</head>
+
+<body>
+<nav id="mine" class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+  <div class="container-fluid">
+  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/index.html" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/01-example/index.html">Example 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/02-example/index.html">Example 2</a>
+        </li>
+        <li class="nav-item">
+			<a class="nav-link" href="/03-example/index.html">Example 3<sup>*</sup></a>
+        </li>
+		 <li class="nav-item">
+          <a class="nav-link" href="/04-example/index.html">Example 4<sup>*</sup></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <main class="container p-5 mb-4 bg-light rounded-3 mt-3">
+		<h1>Example 1</h1>	
+        <p class="lead text-center">Click to retrieve the frisbee: 
+  
+<!-- student: the svg should have an id of "shape" -->  
+    <?xml version="1.0" encoding="UTF-8"?><svg id="shape" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 316 179.65"><g id="b"><image id="c" transform="scale(1.6)" xlink:href="data:image/png;base64,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"/></g></svg>
+
+        <hr>
+        <div id="message" class="hide alert alert-info" role="alert">
+            <ul>
+                <li>Keeping your dog active</li>
+                <li>Make sure your dog gets exercise</li>
+            </ul>
+        </div>
+         <p><button id="reset">Reset</button></p>       
+        <script>
+            const shape = document.getElementById("shape");
+            const message = document.getElementById("message");
+            message.classList.replace("show", "hide");
+            shape.addEventListener("click", () => {
+
+                if (message.style.display == 'block') {
+                    message.style.display = 'none';
+                    shape.style.background = "cornsilk";
+                } else {
+                    message.style.display = 'block';
+                    shape.style.background = "#cff4fc";
+                }
+                shape.classList.toggle("animate");
+                console.log("clicked");
+
+            });
+            const reset = document.getElementById("reset");
+            reset.addEventListener("click", () => {
+               shape.classList.toggle("animate"); 
+                  message.style.display = 'none';
+                shape.style.background = "cornsilk";
+             }); 
+        </script>
+    </main>
+</body>
+
+</html>
