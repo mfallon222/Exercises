@@ -1,0 +1,20 @@
+body{ 
+/* yo student - this is the way to override a css custom property */  
+   --bs-primary-rgb: 13, 110, 253;
+}
+
+header.my-background {
+  background-image: /*url(https://www.jefferson.edu/content/academic/index/jcr%3acontent/root/article/upper_iparsys/home_hero/backgroundImage.img.jpg/1676575858168.jpg);*/
+	url(https://via.placeholder.com/1280x853/e1e1e1/000000.jpg?text=This+is+a+background+image);
+  background-size: cover;
+  background-position: center;
+}
+/*change the background position on big screens*/
+@media (min-width: 1200px) {
+  header.my-background {
+    background-position: center;
+  }
+}
+header .teaser {
+  background-color: rgba(000, 000, 000, 0.6);
+}
