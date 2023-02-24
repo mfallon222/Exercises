@@ -4,8 +4,8 @@ body{
 }
 
 header.my-background {
-  background-image: /*url(https://www.jefferson.edu/content/academic/index/jcr%3acontent/root/article/upper_iparsys/home_hero/backgroundImage.img.jpg/1676575858168.jpg);*/
-	url(https://via.placeholder.com/1280x853/e1e1e1/000000.jpg?text=This+is+a+background+image);
+  background-image: url(https://www.jefferson.edu/content/academic/index/jcr%3acontent/root/article/upper_iparsys/home_hero/backgroundImage.img.jpg/1676575858168.jpg);
+	
   background-size: cover;
   background-position: center;
 }
