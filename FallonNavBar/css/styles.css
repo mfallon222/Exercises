@@ -4,7 +4,7 @@ body{
 }
 
 header.my-background {
-  background-image: url(https://www.jefferson.edu/content/academic/index/jcr%3acontent/root/article/upper_iparsys/home_hero/backgroundImage.img.jpg/1676575858168.jpg);
+  background-image:url(../images/nafinia-putra-Kwdp-0pok-I-unsplash.jpg);
 	
   background-size: cover;
   background-position: center;
@@ -17,4 +17,8 @@ header.my-background {
 }
 header .teaser {
   background-color: rgba(000, 000, 000, 0.6);
+}
+.navbar-brand img{
+    height: 50px;
+    color: rgb:000, 000,000
 }

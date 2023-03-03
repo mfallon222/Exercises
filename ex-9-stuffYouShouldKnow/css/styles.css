@@ -1,0 +1,21 @@
+:root{
+--brand-color:#152456;	
+--accent-color:#ae7100;	
+}
+code {background:yellow;}
+h1 {
+	color:var(--brand-color);
+}
+/* yo student */
+.special {
+	color:var(--accent-color);
+}
+.special li {
+	margin-bottom: .4rem;
+	font-size:1.2rem;
+}
+header {
+	/* yo student, the way to go up a folder is to type ../ at the beginning of the url */
+	background-image: url(../images/graphpaper.svg);
+	padding:12px;
+}
