@@ -2,6 +2,7 @@ body{
 /* yo student - this is the way to override a css custom property */  
    --bs-primary-rgb: 13, 110, 253;
 }
+{background-color: rgba(30, 61, 94)}
 
 header.my-background {
   background-image:url(../images/nafinia-putra-Kwdp-0pok-I-unsplash.jpg);
@@ -20,5 +21,17 @@ header .teaser {
 }
 .navbar-brand img{
     height: 50px;
-    color: rgb:000, 000,000
+
+}
+
+header.mountains {
+  background-image: url(https://assets.codepen.io/1907266/mountains.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+/*change the background position on big screens*/
+@media (min-width: 1200px) {
+  header.mountains {
+    background-position: center;
+  }
 }
